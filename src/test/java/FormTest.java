@@ -56,7 +56,7 @@ public class FormTest {
         open("http://localhost:9999");
         SelenideElement form = $("[action]");
         form.$("[type=text]").setValue("Иван Петров");
-        form.$("[type=tel]").setValue("+79991112233");
+        form.$("[data-test-id=agreement]").click();
         form.$("[type=button]").click();
         $(".input_type_tel .input__sub").shouldHave(Condition.exactText("Поле обязательно для заполнения"));
     }
