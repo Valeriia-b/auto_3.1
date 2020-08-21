@@ -66,8 +66,8 @@ public class FormTest {
         open("http://localhost:9999");
         SelenideElement form = $("[action]");
         form.$("[type=text]").setValue("Иван Петров");
-        form.$("[data-test-id=agreement]").click();
+        form.$("[type=tel]").setValue("+79991112233");
         form.$("[type=button]").click();
-        $("[class=checkbox__text]").shouldHave(Condition.exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй"));
+        $(".input_invalid").shouldHave(Condition.exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй"));
     }
 }
